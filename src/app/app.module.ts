@@ -17,6 +17,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ComponentsComponent } from './shared/components/components.component';
 import { MocksComponent } from './shared/components/mocks/mocks.component';
 import { ModelsComponent } from './shared/components/models/models.component';
+import { AddressComponent } from './pages/custumers/address/address.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ModelsComponent } from './shared/components/models/models.component';
     HomeComponent,
     ComponentsComponent,
     MocksComponent,
-    ModelsComponent
+    ModelsComponent,
+    AddressComponent
   ],
   imports: [
     BrowserModule,
