@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="excluir_icon" transform="translate(-1225 -211)">
+    <rect id="Rectangle_2860" data-name="Rectangle 2860" width="24" height="24" transform="translate(1225 211)" fill="none"/>
+    <g id="trash" transform="translate(1226.458 212.733)">
+      <path id="Path_272" data-name="Path 272" d="M3,6H18.084" transform="translate(0 -0.451)" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/>
+      <path id="Path_273" data-name="Path 273" d="M16.313,6.135V17.623A1.679,1.679,0,0,1,14.7,19.359H6.616A1.679,1.679,0,0,1,5,17.623V6.135m2.424-.663V3.736A1.679,1.679,0,0,1,9.04,2h3.232a1.679,1.679,0,0,1,1.616,1.736V5.472" transform="translate(-0.114 -0.413)" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/>
+    </g>
+  </g>
+</svg>

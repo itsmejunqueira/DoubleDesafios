@@ -1,1 +1,85 @@
-<p>address works!</p>
+<div class="pt-4">
+  <div class="session-adress">
+    <div class="d-flex align-items-center">
+      <span class="title">Endereços </span>
+    </div>
+    <div class="d-flex align-items-center justify-content-start me-4">
+      <button
+        class="btn btn-add"
+        id="add"
+        role="button"
+        (click)="createAdress()"
+      >
+        <img src="/assets/img/adicionar_botao.svg" alt="" />
+        <span class="ms-2"> Adicionar </span>
+      </button>
+      <button
+        class="btn btn-remove"
+        id="add"
+        role="button"
+        (click)="removeAdress()"
+      >
+        <img class="remove_icon" src="assets/img/excluir_icon.svg" alt="" />
+        <span class="ms-2"> Remover </span>
+      </button>
+      <button
+        class="btn btn-remove"
+        id="add"
+        role="button"
+        (click)="sort()"
+      >
+        <img class="remove_icon" src="assets/img/refresh-btn.svg" alt="" />
+        <span class="ms-2"> Ordenar </span>
+      </button>
+      <div class="search" id="cursor-pointer" >
+        <img src="assets/img/search.svg" alt="" />
+        <input type="text" placeholder=" Busca" 
+        [(ngModel)]="search"
+        (ngModelChange)="searchByString()"/>
+      </div>
+    </div>
+
+    <div class="session-table">
+      <div *ngIf="!selectedBodyData.length" class="session-list-empty">
+        <div class="session-list-empty-texts">
+          <h4>Sem itens no momento...</h4>
+        </div>
+      </div>
+      <div class="mt-2 table-container" *ngIf="selectedBodyData.length">
+        <table class="table header-fixed table-hover" width="100%">
+          <thead>
+            <tr>
+              <th
+                *ngFor="let item of selectedHeaderItems; let i = index"
+                class="align-middle"
+                scope="col"
+              >
+                <span
+                  >{{ item?.label }}
+                  <i class="arrow" *ngIf="item.canSort">
+                    <img
+                      class="ordering"
+                      [ngClass]="item.isSorted ? 'rotate' : 'reverse'"
+                      src="assets/img/down_white.svg"
+                  /></i>
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="let item of selectedBodyData; let i = index"
+              [ngClass]="i % 2 != 0 ? 'background-zebra' : ''"
+            >
+              <td class="" [innerHTML]="item?.cep"></td>
+              <td class="align-middle" [innerHTML]="item?.street"></td>
+              <td class="align-middle" [innerHTML]="item?.number"></td>
+              <td class="align-middle" [innerHTML]="item?.city"></td>
+              <td class="align-middle" [innerHTML]="item?.state"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

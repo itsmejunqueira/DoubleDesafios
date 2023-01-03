@@ -1,0 +1,218 @@
+@import "../../../../assets/scss/colors.scss";
+
+
+.session-adress {
+  width           : 100vh;
+  height          : 85vh;
+  margin-top      : 15px;
+  background-color: white;
+
+  .title {
+    font-weight  : 900;
+    font-size    : 28px;
+    color        : $blue-a8;
+    text-align   : left;
+    margin-bottom: 20px;
+  }
+
+  .btn-add {
+    background: $background-color-btn 0 0 no-repeat padding-box;
+    box-shadow: 0px 2px 6px $black;
+    border: none;
+    height: 38px;
+    border-radius: 4px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    color: $white;
+    display: flex;
+    align-items: center;
+    width: 15%;
+    cursor : pointer;
+    margin : 10px;
+    border : none;
+    padding: 10px;
+  }
+
+  .btn-remove {
+    background: $background-color-btn 0 0 no-repeat padding-box;
+    box-shadow: 0px 2px 6px $black;
+    border: none;
+    height: 38px;
+    border-radius: 4px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    color: $white;
+    display: flex;
+    align-items: center;
+    width: 15%;
+    cursor : pointer;    
+    margin : 10px;
+    border : none;
+    padding: 10px;
+  }
+
+  .btn-order {
+    cursor : pointer;
+    width  : 30px;
+    margin : 10px;
+    border : none;
+    padding: 10px;
+  }
+
+  .search {
+    width        : 100%;
+    height       : 45%;
+    border-radius: 20px;
+    padding      : 10px 10px;
+    display      : flex;
+    align-items  : center;
+    background   : $white 0 0 no-repeat padding-box;
+    box-shadow   : 0px 2px 6px $boxShadow;
+    position     : relative;
+
+    img {
+      right: 20px;
+      top  : 0px;
+      width: 30px;
+    }
+
+    input {
+      background    : transparent;
+      border        : none;
+      outline       : none;
+      width         : 0;
+      text-align    : left;
+      font-size     : 16px;
+      letter-spacing: 0;
+      color         : $color-septenary;
+      opacity       : 0.5;
+      width         : 100%;
+    }
+  }
+}
+
+.session-list-empty {
+  background     : $light-gray 0% 0% no-repeat padding-box;
+  height         : 60%;
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+
+  .session-list-empty-texts {
+    color      : $white;
+    font-weight: 600;
+  }
+}
+
+
+
+.session-table {
+  height     : 100%;
+  width      : 97%;
+  margin-left: 1.5%;
+  margin-top : 10px;
+
+  .table-hover {
+    tbody tr {
+
+      &.checked,
+      &:hover {
+        background: $light-gray-fa 0% 0% no-repeat padding-box;
+      }
+    }
+  }
+
+
+  .table-container {
+    z-index : 10px;
+    display : flex;
+    margin  : 0;
+    position: relative;
+    height  : 37rem;
+
+
+
+    table {
+      display  : flex;
+      flex-flow: column;
+      width    : 100%;
+      overflow : auto;
+
+
+    }
+  }
+
+  thead {
+    display : block;
+    flex    : 0 0 auto;
+    position: sticky;
+    top     : 0;
+    z-index : 4;
+
+    tr {
+      white-space : nowrap;
+      background  : $background 0% 0% no-repeat padding-box;
+      color       : $black;
+      width       : 100%;
+      display     : table;
+      table-layout: fixed;
+      border-style: hidden;
+
+      td {
+        overflow     : hidden;
+        text-overflow: ellipsis;
+        white-space  : nowrap;
+        font-size    : 1em;
+        color        : $black;
+        opacity      : 0.6px;
+        font-weight  : 900;
+      }
+    }
+  }
+
+  tbody {
+    flex   : 1 1 auto;
+    display: block;
+    width  : fit-content;
+
+    tr {
+      width       : 100%;
+      display     : table;
+      table-layout: fixed;
+      border-style: hidden;
+
+      td {
+        overflow     : hidden;
+        text-overflow: ellipsis;
+        white-space  : nowrap;
+        padding      : 7px;
+        font-size    : 1em;
+        color        : $black;
+        cursor       : pointer;
+
+
+
+      }
+    }
+  }
+}
+
+
+
+.ordering {
+  width : 10px;
+  cursor: pointer;
+}
+
+
+.background-zebra {
+  background-color: $table-striped-color;
+}
+
+.widthAction{
+  width: 8vh;
+}
