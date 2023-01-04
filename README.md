@@ -3,26 +3,26 @@
 Part 01: Nesse desafio iremos aprender a como estruturar o aplicativo angular. 
 
 Deve seguir a seguinte estrutura: 
-v SrC 
-v app 
-v core 
-v authentication 
-> directives 
-> guards 
-> helpers 
-> pipes 
-> services 
-> course-details 
-v home 
-v shared 
-v components 
-> mocks 
-> models 
-TS appcomponent.spects 
-TS appcomponent.ts 
-TS app.module.ts 
-> assets 
-> environments 
+* SrC /
+ app /
+ core /
+ authentication /
+ directives/
+ guards /
+ helpers /
+ pipes /
+ services /
+ course-details /
+ home /
+ shared /
+ components /
+ mocks /
+ models /
+ appcomponent.spects /
+ appcomponent.ts /
+ app.module.ts /
+ assets /
+ environments /
  
 
 As pastas serão todas vazias, o projeto só estará estruturado. 
