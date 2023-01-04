@@ -1,0 +1,93 @@
+@import "../../../assets/scss/colors.scss";
+@import "../../../assets/scss/breakpoints.scss";
+.go-back {
+  padding-top: 15px;
+  margin-left: -2vh;
+  .forgot {
+    color: $black;
+    text-decoration: none;
+  }
+
+  @include for-phone-only {
+    margin-left: 0vh;
+  }
+}
+.login-body {
+  margin: 0px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px 30px;
+  border-radius: 15px;
+  width: 440px;
+  height: 513px;
+  z-index: 10000;
+
+  .login-header {
+    img {
+      margin-top: -10px;
+      margin-right: 15px;
+      width: 60%;
+    }
+  }
+}
+
+.spinner {
+  margin-top: -60px;
+  color: $white;
+}
+@include for-phone-only {
+  .login-body {
+    align-items: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    width: 84%;
+
+    .login-header {
+      img {
+        width: 200px;
+      }
+    }
+  }
+}
+
+@include for-tablet-portrait-only {
+  .login-body {
+    align-items: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    width: 100%;
+    top: 40%;
+
+    .login-header {
+      img {
+        width: 200px;
+      }
+    }
+  }
+}
+
+@include for-iphone5 {
+  .login-body {
+    align-items: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    width: 84%;
+    top: 40%;
+
+    .login-header {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@include for-notebook {
+  .login-body {
+    width: 55vh;
+  }
+}
+
+

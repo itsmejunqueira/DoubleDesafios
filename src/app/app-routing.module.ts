@@ -5,18 +5,25 @@ import { AddressComponent } from './pages/custumers/address/address.component';
 import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
+  
   {
     path: '',
-    redirectTo: 'custumers',
+    redirectTo: 'login',
     pathMatch: 'full',
   },
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./pages/auth/auth.module').then((m) => m.AuthModule),
+  },
+
   {
     path: 'home',
     component: HomeComponent,
     canActivate: [],
   },
   {
-    path: 'custumers',
+    path: 'customer',
     component: AddressComponent,
     canActivate: [],
   },

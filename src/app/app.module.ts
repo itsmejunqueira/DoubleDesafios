@@ -9,6 +9,8 @@ import { AddressComponent } from './pages/custumers/address/address.component';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,7 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     MocksComponent,
     AddressComponent
+
   ],
   imports: [
     BrowserModule,
@@ -24,6 +27,9 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     AppRoutingModule,
     FormsModule,
+    ToastrModule.forRoot(),
+    SharedModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

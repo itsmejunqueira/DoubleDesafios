@@ -1,0 +1,100 @@
+<form
+  [formGroup]="formLogin"
+  class="d-flex flex-column justify-content-center"
+  (ngSubmit)="submit()"
+>
+  <div
+    class="input-holder d-flex flex-column justify-content-center align-items-center"
+  >
+    <div class="form-group">
+      <label for="email" class="mt-4">Login </label>
+      <input
+        type="email"
+        class="form-control shadow-none"
+        formControlName="emailAddress"
+        id="email"
+        required
+        [ngClass]="{
+          errorInput:
+            formLogin.controls.emailAddress.invalid &&
+            (formLogin.controls.emailAddress.dirty ||
+              formLogin.controls.emailAddress.touched)
+        }"
+      />
+      <div
+        class="session-alert"
+        *ngIf="
+          formLogin.controls &&
+          (formLogin.controls.emailAddress.dirty ||
+            formLogin.controls.emailAddress.touched)
+        "
+        class="session-alert"
+      >
+        <div
+          class="alert-danger"
+          *ngIf="formLogin.controls.emailAddress.invalid"
+        >
+          Login obrigatório!
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password" class="mt-4">Senha</label>
+      <div class="Password-container mb-1">
+        <input
+          type="password"
+          class="form-control shadow-none"
+          id="password"
+          formControlName="password"
+          placeholder="Senha"
+          required
+          [type]="show_eye ? 'text' : 'password'"
+          [ngClass]="{
+            errorInput:
+              formLogin.controls.password.invalid &&
+              (formLogin.controls.password.dirty ||
+                formLogin.controls.password.touched)
+          }"
+        />
+        <div
+          class="session-alert"
+          *ngIf="
+            formLogin.controls.password.invalid &&
+            (formLogin.controls.password.dirty ||
+              formLogin.controls.password.touched)
+          "
+          class="session-alert"
+        >
+          <div class="alert-danger" *ngIf="formLogin.controls.password.invalid">
+            Senha obrigatória!
+          </div>
+        </div>
+        <img
+          class="viewPassword"
+          (click)="show_eye = !show_eye"
+          [src]="
+            !show_eye ? 'assets/img/Hide.svg' : 'assets/img/Unhide.svg'
+          "
+          alt=""
+        />
+      </div>
+    </div>
+   
+    <button
+      type="submit"
+      class="btn btn-primary btn-block"
+      [disabled]="!formLogin.valid"
+      class="button mt-4"
+      id="cursor-pointer"
+    >
+      <span class="d-flex align-items-center justify-content-center">
+        Entrar
+      </span>
+    </button>
+    <div class="d-flex juntify-content-end">
+      <a href="login/esqueci-minha-senha" class="forgot mt-3 text-left"
+        >Esqueceu a senha?</a
+      >
+    </div>
+  </div>
+</form>
