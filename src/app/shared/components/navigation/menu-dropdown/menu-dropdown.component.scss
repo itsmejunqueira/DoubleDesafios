@@ -1,0 +1,45 @@
+@import "../../../../../assets/scss/breakpoints.scss";
+@import "../../../../../assets/scss/colors.scss";
+
+.dropdown {
+  font: normal normal 600 16px/19px Work Sans;
+  letter-spacing: 0px;
+  color: $primary;
+  opacity: 1;
+  margin-left: 15px;
+  margin-right: 8px;
+  background-color: $secondary;
+  border-radius: 6px;
+  .btn{
+    color: $primary;
+  }
+}
+
+.link-active {
+  border-left: $purple_7f 5px solid !important;
+  background-color: $light-gray;
+}
+
+
+.dropdown-item {
+  font-weight: 600;
+
+  &:hover {
+    background-color: $light-gray !important;
+  }
+}
+.dropdown-menu {
+  width: 150px;
+  margin-top: 15px;
+  max-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  @include for-small-notebook {
+    max-height: 100vh !important;
+  }
+
+  @include for-notebook {
+    max-height: 550px;
+  }
+}
