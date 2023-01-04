@@ -33,9 +33,7 @@ Instale o angular material.
 
 Usar última versão instável do angular. 
 
-Part 2: 
-
-crie uma nova pasta chamada customers, dentro crie os arquivos do angular com o comando cli, o arquivo deve chamar address.component.  
+Part 2: Crie uma nova pasta chamada customers, dentro crie os arquivos do angular com o comando cli, o arquivo deve chamar address.component.  
 
 HTML : 
 
