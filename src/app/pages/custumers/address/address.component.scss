@@ -77,7 +77,7 @@
   }
 
   .search {
-    width        : 100%;
+    width        : 90%;
     height       : 45%;
     border-radius: 20px;
     padding      : 10px 10px;
@@ -160,14 +160,25 @@
     position: relative;
     height  : 37rem;
 
-
+    @include for-notebook {
+      height: 22rem;
+    }
+    @include for-small-notebook {
+      height: 37rem;
+    }
+    @include for-phone-only {
+      height: 23rem;
+    }
 
     table {
       display  : flex;
       flex-flow: column;
       width    : 100%;
       overflow : auto;
-
+      @include for-phone-only {
+        width: 90%;
+        margin-left: 5%;
+      }
 
     }
   }
@@ -197,6 +208,12 @@
         opacity      : 0.6px;
         font-weight  : 900;
       }
+      @include for-notebook {
+        font-size: 0.7em;
+      }
+      @include for-small-notebook {
+        font-size: 1em;
+      }
     }
   }
 
@@ -220,7 +237,12 @@
         color        : $black;
         cursor       : pointer;
 
-
+        @include for-notebook {
+          font-size: 0.9em;
+        }
+        @include for-small-notebook {
+          font-size: 1em;
+        }
 
       }
     }
@@ -228,6 +250,17 @@
 }
 
 
+.widthCodes {
+  width: 13vh;
+}
+
+.widthColumn {
+  width: 30vh;
+}
+
+.widthNames {
+  width: 13vh;
+}
 
 .ordering {
   width : 10px;

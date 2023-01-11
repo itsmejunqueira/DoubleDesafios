@@ -54,15 +54,15 @@
                 *ngFor="let item of selectedHeaderItems; let i = index"
                 class="align-middle"
                 scope="col"
+                [ngClass]="
+                    i == 1
+                      ? 'widthColumn'
+                      : i == 0
+                      ? 'widthCodes'
+                      : 'widthNames'"
               >
                 <span
-                  >{{ item?.label }}
-                  <i class="arrow" *ngIf="item.canSort">
-                    <img
-                      class="ordering"
-                      [ngClass]="item.isSorted ? 'rotate' : 'reverse'"
-                      src="assets/img/down_white.svg"
-                  /></i>
+                  >{{ item?.label }}              
                 </span>
               </th>
             </tr>
@@ -72,11 +72,11 @@
               *ngFor="let item of selectedBodyData; let i = index"
               [ngClass]="i % 2 != 0 ? 'background-zebra' : ''"
             >
-              <td class="" [innerHTML]="item?.cep"></td>
-              <td class="align-middle" [innerHTML]="item?.street"></td>
-              <td class="align-middle" [innerHTML]="item?.number"></td>
-              <td class="align-middle" [innerHTML]="item?.city"></td>
-              <td class="align-middle" [innerHTML]="item?.state"></td>
+              <td class="align-middle widthCodes" [innerHTML]="item?.cep"></td>
+              <td class="align-middle widthColumn" [innerHTML]="item?.street"></td>
+              <td class="align-middle widthCodes" [innerHTML]="item?.number"></td>
+              <td class="align-middle widthNames" [innerHTML]="item?.city"></td>
+              <td class="align-middle widthNames" [innerHTML]="item?.state"></td>
             </tr>
           </tbody>
         </table>

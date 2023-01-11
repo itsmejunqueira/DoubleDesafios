@@ -68,22 +68,6 @@
   }
 }
 
-@include for-iphone5 {
-  .login-body {
-    align-items: center;
-    overflow-y: hidden;
-    overflow-x: hidden;
-    width: 84%;
-    top: 40%;
-
-    .login-header {
-      img {
-        width: 100%;
-      }
-    }
-  }
-}
-
 @include for-notebook {
   .login-body {
     width: 55vh;
