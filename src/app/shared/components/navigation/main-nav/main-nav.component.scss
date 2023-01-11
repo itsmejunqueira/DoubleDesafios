@@ -31,6 +31,9 @@ p {
 
 .msg{
   margin-right: 40%;
+  @include for-phone-only {
+    margin-right: 10%;
+  }
 }
 .logout{
   margin-right: 2rem;
