@@ -2,14 +2,11 @@ import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { RequestsService } from './services/request.service';
+import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
-import { JwtInterceptor } from './helpers/jwt.interceptor';
-import { ErrorInterceptor } from './helpers/error.interceptor';
 import localePt from '@angular/common/locales/pt';
 import { CurrencyPipe, registerLocaleData } from '@angular/common';
-import { CommonService } from './services/common.service';
+import { AuthGuard } from './guards/auth.guard';
 registerLocaleData(localePt);
 @NgModule({
   imports: [
@@ -20,16 +17,7 @@ registerLocaleData(localePt);
     HttpClientModule,
   ],
 
-  providers: [
-    RequestsService,
-    AuthService,
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-    { provide: LOCALE_ID, useValue: 'pt-BR' },
-  
-    CommonService,
-    CurrencyPipe,
-  ],
+  providers: [AuthService, CurrencyPipe],
   exports: [
     BrowserModule,
     BrowserAnimationsModule,

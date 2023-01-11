@@ -8,10 +8,8 @@ import { AuthService } from 'src/app/core/services/auth.service';
   styleUrls: ['./auth.component.scss'],
 })
 export class AuthComponent implements OnInit {
-  public isMobile: boolean = false;
   public showBackButton: boolean = false;
   constructor(
-    private _authService: AuthService,
     public _routerService: Router
   ) {}
 

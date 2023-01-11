@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './core/guards/auth.guard';
 import { CourseDetailsComponent } from './pages/course-details/course-details.component';
 import { AddressComponent } from './pages/custumers/address/address.component';
 import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
-  
   {
     path: '',
     redirectTo: 'login',
@@ -15,22 +15,23 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () =>
       import('./pages/auth/auth.module').then((m) => m.AuthModule),
+    // canActivate: [AuthGuard],
   },
 
   {
     path: 'home',
     component: HomeComponent,
-    canActivate: [],
+    canActivate: [AuthGuard],
   },
   {
     path: 'customer',
     component: AddressComponent,
-    canActivate: [],
+    canActivate: [AuthGuard],
   },
   {
     path: 'coursedetails',
     component: CourseDetailsComponent,
-    canActivate: [],
+    canActivate: [AuthGuard],
   },
 ];
 
